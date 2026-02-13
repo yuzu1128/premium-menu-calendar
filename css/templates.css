@@ -1,0 +1,1599 @@
+/* =========================================
+   月別装飾テンプレート
+   12ヶ月 × 4テンプレート = 48種
+   各月の季節感を反映した独自デザイン
+   ========================================= */
+
+/* ─────────────────────────────────────────
+   1月 睦月（むつき）— 新春・冬
+   ───────────────────────────────────────── */
+
+/* 迎春 — 金箔・朱色・松竹梅 */
+.tpl-1-shogatsu {
+  background: linear-gradient(160deg, #fffdf5 0%, #fff8e1 50%, #fff3cd 100%);
+  border: 2px solid #c4a747;
+  border-radius: 4px;
+}
+.tpl-1-shogatsu header {
+  border-bottom: 3px double #b8860b;
+  padding-bottom: 18px;
+}
+.tpl-1-shogatsu header::after {
+  content: '🎍  謹 賀 新 年  🎍';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #b8860b;
+  letter-spacing: 0.4em;
+}
+.tpl-1-shogatsu h1 { color: #8b0000; }
+.tpl-1-shogatsu .header-subtitle { color: #b8860b; letter-spacing: 0.5em; }
+.tpl-1-shogatsu .day-header {
+  background: linear-gradient(180deg, #fff8e1 0%, #fff3cd 100%);
+  color: #5d4037;
+  border-color: #d4a574;
+  font-weight: 800;
+}
+.tpl-1-shogatsu .calendar { border-color: #d4a574; }
+.tpl-1-shogatsu .day-cell { border-color: #d4a574; background: #fffdf8; }
+.tpl-1-shogatsu .day-cell.empty { background: #fdf6e3; }
+.tpl-1-shogatsu .menu-items li::before { content: '◆'; color: #b8860b; font-size: 0.6em; top: 2px; }
+.tpl-1-shogatsu .note { background: #fff8e1; border-color: #daa520; color: #8b4513; }
+
+/* 雪景色 — 白銀・淡いブルー */
+.tpl-1-yukigeshiki {
+  background: linear-gradient(180deg, #f0f8ff 0%, #e8f4f8 40%, #dbedf5 100%);
+  border: 1px solid #b0d4e8;
+  border-radius: 16px;
+}
+.tpl-1-yukigeshiki header {
+  border-bottom: 2px solid #a8d8ea;
+}
+.tpl-1-yukigeshiki header::after {
+  content: '❄ ❅ ❆';
+  display: block;
+  font-size: 1rem;
+  margin-top: 6px;
+  color: #7bb8d4;
+  letter-spacing: 1em;
+}
+.tpl-1-yukigeshiki h1 { color: #2c5f7c; }
+.tpl-1-yukigeshiki .header-subtitle { color: #6ba3be; }
+.tpl-1-yukigeshiki .day-header {
+  background: #e8f4f8;
+  color: #3a7ca5;
+  border-color: #b0d4e8;
+}
+.tpl-1-yukigeshiki .calendar { border-color: #b0d4e8; }
+.tpl-1-yukigeshiki .day-cell {
+  border-color: #c5dfe8;
+  background: rgba(255,255,255,0.85);
+}
+.tpl-1-yukigeshiki .day-cell.empty { background: #f0f6fa; }
+.tpl-1-yukigeshiki .day-number { color: #2c5f7c; }
+.tpl-1-yukigeshiki .menu-items li::before { content: '·'; color: #7bb8d4; }
+.tpl-1-yukigeshiki .note { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+
+/* 冬の夜 — ダークブルー・星空 */
+.tpl-1-fuyunoyoru {
+  background: linear-gradient(160deg, #0d1b2a 0%, #1b2838 60%, #1a2332 100%);
+  border: 1px solid #2a3f5f;
+  color: #e0e8f0;
+}
+.tpl-1-fuyunoyoru header {
+  border-bottom: 1px solid #3a5070;
+}
+.tpl-1-fuyunoyoru header::after {
+  content: '✦  ✧  ✦  ✧  ✦';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #ffd700;
+  letter-spacing: 0.5em;
+}
+.tpl-1-fuyunoyoru h1 { color: #c8ddf0; }
+.tpl-1-fuyunoyoru .header-subtitle { color: #8ca8c8; }
+.tpl-1-fuyunoyoru .day-header {
+  background: #15253a;
+  color: #90b0d0;
+  border-color: #2a3f5f;
+}
+.tpl-1-fuyunoyoru .calendar { border-color: #2a3f5f; background: rgba(13,27,42,0.5); }
+.tpl-1-fuyunoyoru .day-cell {
+  border-color: #2a3f5f;
+  background: rgba(20,35,55,0.8);
+  color: #d0dce8;
+}
+.tpl-1-fuyunoyoru .day-cell.empty { background: rgba(10,20,35,0.6); }
+.tpl-1-fuyunoyoru .day-cell:hover { box-shadow: inset 0 0 0 2px #ffd700; }
+.tpl-1-fuyunoyoru .day-number { color: #a8c8e8; }
+.tpl-1-fuyunoyoru .menu-items li { color: #c0d0e0; }
+.tpl-1-fuyunoyoru .menu-items li::before { content: '★'; color: #ffd700; font-size: 0.55em; top: 3px; }
+.tpl-1-fuyunoyoru .note { background: #1e3350; border-color: #3a5070; color: #a8c8e8; }
+.tpl-1-fuyunoyoru .special-menu-title { color: #ffd700; }
+
+/* 初詣 — 朱×白・鳥居風 */
+.tpl-1-hatsumoude {
+  background: #faf8f5;
+  border: none;
+  border-top: 6px solid #c0392b;
+  border-radius: 0;
+}
+.tpl-1-hatsumoude header {
+  border-bottom: none;
+  background: #c0392b;
+  color: white;
+  margin: -30px -30px 20px -30px;
+  padding: 24px 30px 18px;
+}
+.tpl-1-hatsumoude h1 { color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+.tpl-1-hatsumoude .header-subtitle { color: rgba(255,255,255,0.85); }
+.tpl-1-hatsumoude .day-header {
+  background: #f5e6e6;
+  color: #8b1a1a;
+  border-color: #e0c0c0;
+  font-weight: 800;
+}
+.tpl-1-hatsumoude .calendar { border-color: #e0c0c0; }
+.tpl-1-hatsumoude .day-cell { border-color: #e8d0d0; background: #fefcfa; }
+.tpl-1-hatsumoude .day-cell.empty { background: #f8f0ee; }
+.tpl-1-hatsumoude .menu-items li::before { content: '⛩'; font-size: 0.6em; color: #c0392b; top: 1px; }
+.tpl-1-hatsumoude .note { background: #fce4ec; border-color: #e57373; color: #b71c1c; }
+
+/* ─────────────────────────────────────────
+   2月 如月（きさらぎ）— バレンタイン・梅
+   ───────────────────────────────────────── */
+
+/* バレンタイン — ピンク・ハート */
+.tpl-2-valentine {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8ef 50%, #ffd6e7 100%);
+  border: 2px solid #f8a4c0;
+  border-radius: 16px;
+}
+.tpl-2-valentine header {
+  border-bottom: 2px solid #f48fb1;
+}
+.tpl-2-valentine header::after {
+  content: '♥ ♥ ♥';
+  display: block;
+  font-size: 1rem;
+  margin-top: 6px;
+  color: #e91e63;
+  letter-spacing: 0.8em;
+}
+.tpl-2-valentine h1 { color: #ad1457; }
+.tpl-2-valentine .header-subtitle { color: #e91e63; }
+.tpl-2-valentine .day-header {
+  background: #fce4ec;
+  color: #880e4f;
+  border-color: #f8bbd0;
+}
+.tpl-2-valentine .calendar { border-color: #f8bbd0; }
+.tpl-2-valentine .day-cell { border-color: #f8c8d8; background: rgba(255,255,255,0.7); }
+.tpl-2-valentine .day-cell.empty { background: #fff0f3; }
+.tpl-2-valentine .day-number { color: #c2185b; }
+.tpl-2-valentine .menu-items li::before { content: '♡'; color: #e91e63; font-size: 0.7em; top: 1px; }
+.tpl-2-valentine .note { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+
+/* 梅の花 — 紅梅×白・和風 */
+.tpl-2-ume {
+  background: #fcf8f5;
+  border: 1px solid #d4a5a5;
+  border-radius: 4px;
+}
+.tpl-2-ume header {
+  border-bottom: 3px double #c97586;
+  padding-bottom: 20px;
+}
+.tpl-2-ume header::after {
+  content: '✿  梅 花  ✿';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #c97586;
+  letter-spacing: 0.5em;
+}
+.tpl-2-ume h1 { color: #7a2e3e; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+.tpl-2-ume .header-subtitle { color: #b05a6a; letter-spacing: 0.5em; }
+.tpl-2-ume .day-header {
+  background: #f8ece8;
+  color: #6d3a3a;
+  border-color: #d4a5a5;
+}
+.tpl-2-ume .calendar { border-color: #d4a5a5; }
+.tpl-2-ume .day-cell { border-color: #e0c0c0; background: #fefbf9; }
+.tpl-2-ume .day-cell.empty { background: #f8f0ed; }
+.tpl-2-ume .menu-items li::before { content: '❀'; color: #c97586; font-size: 0.65em; top: 2px; }
+.tpl-2-ume .note { background: #fce8e8; border-color: #e0a0a0; color: #7a2e3e; }
+
+/* ショコラ — ブラウン×ゴールド・高級感 */
+.tpl-2-chocolate {
+  background: linear-gradient(160deg, #3e2723 0%, #4e342e 50%, #3e2723 100%);
+  border: 2px solid #8d6e63;
+  color: #efebe9;
+}
+.tpl-2-chocolate header {
+  border-bottom: 2px solid #a1887f;
+}
+.tpl-2-chocolate header::after {
+  content: '🍫  Chocolat  🍫';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #d7ccc8;
+  letter-spacing: 0.3em;
+}
+.tpl-2-chocolate h1 { color: #efebe9; }
+.tpl-2-chocolate .header-subtitle { color: #bcaaa4; }
+.tpl-2-chocolate .day-header {
+  background: #4e342e;
+  color: #d7ccc8;
+  border-color: #6d4c41;
+}
+.tpl-2-chocolate .calendar { border-color: #6d4c41; background: rgba(62,39,35,0.5); }
+.tpl-2-chocolate .day-cell {
+  border-color: #5d4037;
+  background: rgba(78,52,46,0.8);
+  color: #efebe9;
+}
+.tpl-2-chocolate .day-cell.empty { background: rgba(62,39,35,0.6); }
+.tpl-2-chocolate .day-cell:hover { box-shadow: inset 0 0 0 2px #d4a373; }
+.tpl-2-chocolate .day-number { color: #d7ccc8; }
+.tpl-2-chocolate .menu-items li { color: #d7ccc8; }
+.tpl-2-chocolate .menu-items li::before { content: '◈'; color: #d4a373; font-size: 0.6em; top: 2px; }
+.tpl-2-chocolate .note { background: #5d4037; border-color: #795548; color: #d7ccc8; }
+.tpl-2-chocolate .special-menu-title { color: #d4a373; }
+
+/* 雪解け — パステルブルー・清涼感 */
+.tpl-2-yukidoke {
+  background: linear-gradient(180deg, #f5f9ff 0%, #eaf3fc 100%);
+  border: 1px solid #bbd4e8;
+  border-radius: 12px;
+}
+.tpl-2-yukidoke header {
+  border-bottom: 2px solid #90bbd8;
+}
+.tpl-2-yukidoke h1 { color: #2c5f7c; font-weight: 700; }
+.tpl-2-yukidoke .header-subtitle { color: #5a9ab5; }
+.tpl-2-yukidoke .day-header {
+  background: #e3eff8;
+  color: #2c5f7c;
+  border-color: #bbd4e8;
+}
+.tpl-2-yukidoke .calendar { border-color: #bbd4e8; }
+.tpl-2-yukidoke .day-cell { border-color: #ccdee8; background: rgba(255,255,255,0.9); }
+.tpl-2-yukidoke .day-cell.empty { background: #eef5fa; }
+.tpl-2-yukidoke .day-number { color: #2c5f7c; }
+.tpl-2-yukidoke .menu-items li::before { content: '–'; color: #5a9ab5; }
+.tpl-2-yukidoke .note { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+
+/* ─────────────────────────────────────────
+   3月 弥生（やよい）— ひなまつり・春の訪れ
+   ───────────────────────────────────────── */
+
+/* ひなまつり — 桃色×若草・菱餅カラー */
+.tpl-3-hinamatsuri {
+  background: linear-gradient(180deg, #fce4ec 0%, #fff5f7 30%, #e8f5e9 70%, #fff 100%);
+  border: 2px solid #f48fb1;
+  border-radius: 8px;
+}
+.tpl-3-hinamatsuri header {
+  border-bottom: none;
+}
+.tpl-3-hinamatsuri header::after {
+  content: '🎎  桃 の 節 句  🌸';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ad1457;
+  letter-spacing: 0.3em;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #e91e63, #81c784, #fff) 1;
+  padding-top: 8px;
+}
+.tpl-3-hinamatsuri h1 { color: #ad1457; }
+.tpl-3-hinamatsuri .header-subtitle { color: #e91e63; }
+.tpl-3-hinamatsuri .day-header {
+  background: #fce4ec;
+  color: #880e4f;
+  border-color: #f8bbd0;
+}
+.tpl-3-hinamatsuri .calendar { border-color: #f8bbd0; }
+.tpl-3-hinamatsuri .day-cell { border-color: #f0c0d0; background: rgba(255,255,255,0.8); }
+.tpl-3-hinamatsuri .day-cell.empty { background: #fdf0f3; }
+.tpl-3-hinamatsuri .menu-items li::before { content: '🌸'; font-size: 0.55em; top: 2px; }
+.tpl-3-hinamatsuri .note { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+
+/* 菜の花 — 黄色×緑・明るい */
+.tpl-3-nanohana {
+  background: linear-gradient(135deg, #fffde7 0%, #f9fbe7 50%, #f1f8e9 100%);
+  border: 2px solid #c5e1a5;
+  border-radius: 10px;
+}
+.tpl-3-nanohana header {
+  border-bottom: 3px solid #aed581;
+}
+.tpl-3-nanohana header::after {
+  content: '✿ 菜の花畑 ✿';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #9e9d24;
+  letter-spacing: 0.4em;
+}
+.tpl-3-nanohana h1 { color: #827717; }
+.tpl-3-nanohana .header-subtitle { color: #9e9d24; }
+.tpl-3-nanohana .day-header {
+  background: #f0f4c3;
+  color: #558b2f;
+  border-color: #c5e1a5;
+}
+.tpl-3-nanohana .calendar { border-color: #c5e1a5; }
+.tpl-3-nanohana .day-cell { border-color: #d4e8b0; background: #fffffa; }
+.tpl-3-nanohana .day-cell.empty { background: #f5f8e8; }
+.tpl-3-nanohana .day-number { color: #558b2f; }
+.tpl-3-nanohana .menu-items li::before { content: '❁'; color: #fbc02d; font-size: 0.65em; top: 2px; }
+.tpl-3-nanohana .note { background: #f9fbe7; border-color: #dce775; color: #827717; }
+
+/* 春風 — パステルピンク×ラベンダー */
+.tpl-3-harukaze {
+  background: linear-gradient(160deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);
+  border: 1px solid #ce93d8;
+  border-radius: 20px;
+}
+.tpl-3-harukaze header {
+  border-bottom: 2px dotted #ce93d8;
+}
+.tpl-3-harukaze h1 { color: #7b1fa2; }
+.tpl-3-harukaze .header-subtitle { color: #ab47bc; }
+.tpl-3-harukaze .day-header {
+  background: rgba(243,229,245,0.6);
+  color: #7b1fa2;
+  border-color: #e1bee7;
+}
+.tpl-3-harukaze .calendar { border-color: #e1bee7; }
+.tpl-3-harukaze .day-cell {
+  border-color: #e8d0ee;
+  background: rgba(255,255,255,0.65);
+}
+.tpl-3-harukaze .day-cell.empty { background: rgba(243,229,245,0.3); }
+.tpl-3-harukaze .day-number { color: #7b1fa2; }
+.tpl-3-harukaze .menu-items li::before { content: '◦'; color: #ab47bc; }
+.tpl-3-harukaze .note { background: #f3e5f5; border-color: #ce93d8; color: #6a1b9a; }
+
+/* 早春 — フレッシュグリーン・モダン */
+.tpl-3-soushun {
+  background: #f8fdf5;
+  border: none;
+  border-left: 5px solid #66bb6a;
+  border-radius: 0;
+}
+.tpl-3-soushun header {
+  border-bottom: 1px solid #a5d6a7;
+  text-align: left;
+  padding-left: 10px;
+}
+.tpl-3-soushun h1 { color: #2e7d32; font-family: 'Noto Sans JP', sans-serif; font-weight: 500; font-size: 2rem; }
+.tpl-3-soushun .header-subtitle { color: #66bb6a; letter-spacing: 0.2em; }
+.tpl-3-soushun .day-header {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+.tpl-3-soushun .calendar { border-color: #c8e6c9; }
+.tpl-3-soushun .day-cell { border-color: #d8ead8; background: #fff; }
+.tpl-3-soushun .day-cell.empty { background: #f0f8f0; }
+.tpl-3-soushun .day-number { color: #388e3c; font-weight: 500; }
+.tpl-3-soushun .menu-items li::before { content: '▸'; color: #66bb6a; }
+.tpl-3-soushun .note { background: #e8f5e9; border-color: #a5d6a7; color: #1b5e20; }
+
+/* ─────────────────────────────────────────
+   4月 卯月（うづき）— 桜・新生活
+   ───────────────────────────────────────── */
+
+/* 桜 — ピンクグラデーション */
+.tpl-4-sakura {
+  background: linear-gradient(180deg, #fff0f3 0%, #ffe0ea 30%, #ffd6e0 60%, #fff5f7 100%);
+  border: 1px solid #f8a0b8;
+  border-radius: 12px;
+}
+.tpl-4-sakura header {
+  border-bottom: 2px solid #f48fb1;
+}
+.tpl-4-sakura header::after {
+  content: '🌸  🌸  🌸  🌸  🌸';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  letter-spacing: 0.4em;
+  opacity: 0.7;
+}
+.tpl-4-sakura h1 { color: #c2185b; }
+.tpl-4-sakura .header-subtitle { color: #e91e63; }
+.tpl-4-sakura .day-header {
+  background: rgba(252,228,236,0.7);
+  color: #ad1457;
+  border-color: #f8bbd0;
+}
+.tpl-4-sakura .calendar { border-color: #f8bbd0; }
+.tpl-4-sakura .day-cell { border-color: #f8c8d8; background: rgba(255,255,255,0.6); }
+.tpl-4-sakura .day-cell.empty { background: rgba(255,240,245,0.5); }
+.tpl-4-sakura .menu-items li::before { content: '✿'; color: #f06292; font-size: 0.6em; top: 2px; }
+.tpl-4-sakura .note { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+
+/* 新緑 — 若葉色・清々しい */
+.tpl-4-shinryoku {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #f9fbe7 100%);
+  border: 2px solid #81c784;
+  border-radius: 8px;
+}
+.tpl-4-shinryoku header {
+  border-bottom: 3px solid #66bb6a;
+}
+.tpl-4-shinryoku header::after {
+  content: '🌿  新 緑 の 候  🌿';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #388e3c;
+  letter-spacing: 0.4em;
+}
+.tpl-4-shinryoku h1 { color: #1b5e20; }
+.tpl-4-shinryoku .header-subtitle { color: #43a047; }
+.tpl-4-shinryoku .day-header {
+  background: #c8e6c9;
+  color: #1b5e20;
+  border-color: #a5d6a7;
+}
+.tpl-4-shinryoku .calendar { border-color: #a5d6a7; }
+.tpl-4-shinryoku .day-cell { border-color: #c8e6c9; background: rgba(255,255,255,0.85); }
+.tpl-4-shinryoku .day-cell.empty { background: #f0f8f0; }
+.tpl-4-shinryoku .day-number { color: #2e7d32; }
+.tpl-4-shinryoku .menu-items li::before { content: '🌱'; font-size: 0.5em; top: 3px; }
+.tpl-4-shinryoku .note { background: #e8f5e9; border-color: #81c784; color: #1b5e20; }
+
+/* 花見 — 桜色×和風・金箔 */
+.tpl-4-hanami {
+  background: #fdf5f0;
+  border: 2px solid #d4a580;
+  border-radius: 4px;
+}
+.tpl-4-hanami header {
+  border-bottom: 3px double #c97c5c;
+  padding-bottom: 18px;
+}
+.tpl-4-hanami header::after {
+  content: '花  見  酒';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #a0522d;
+  letter-spacing: 1em;
+}
+.tpl-4-hanami h1 { color: #8b4513; }
+.tpl-4-hanami .header-subtitle { color: #a0522d; letter-spacing: 0.5em; }
+.tpl-4-hanami .day-header {
+  background: #fde8d8;
+  color: #6d3a2e;
+  border-color: #d4a580;
+}
+.tpl-4-hanami .calendar { border-color: #d4a580; }
+.tpl-4-hanami .day-cell { border-color: #e0c0a0; background: #fefaf6; }
+.tpl-4-hanami .day-cell.empty { background: #f8f0e8; }
+.tpl-4-hanami .menu-items li::before { content: '◇'; color: #c97c5c; font-size: 0.6em; }
+.tpl-4-hanami .note { background: #fff3e0; border-color: #ffcc80; color: #e65100; }
+
+/* パステル — やさしい春色 */
+.tpl-4-pastel {
+  background: linear-gradient(160deg, #e8f5e9 0%, #e3f2fd 30%, #fce4ec 60%, #fff9c4 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+}
+.tpl-4-pastel header {
+  border-bottom: 2px dotted #bdbdbd;
+}
+.tpl-4-pastel h1 { color: #5d4037; font-weight: 700; }
+.tpl-4-pastel .header-subtitle { color: #78909c; }
+.tpl-4-pastel .day-header {
+  background: rgba(255,255,255,0.6);
+  color: #546e7a;
+  border-color: #e0e0e0;
+}
+.tpl-4-pastel .calendar { border-color: #e0e0e0; }
+.tpl-4-pastel .day-cell {
+  border-color: #e8e8e8;
+  background: rgba(255,255,255,0.5);
+}
+.tpl-4-pastel .day-cell.empty { background: rgba(255,255,255,0.25); }
+.tpl-4-pastel .day-number { color: #5d4037; }
+.tpl-4-pastel .menu-items li::before { content: '●'; color: #90caf9; font-size: 0.4em; top: 4px; }
+.tpl-4-pastel .note { background: rgba(255,255,255,0.7); border-color: #e0e0e0; color: #546e7a; }
+
+/* ─────────────────────────────────────────
+   5月 皐月（さつき）— 新緑・端午の節句
+   ───────────────────────────────────────── */
+
+/* 深緑 — 落ち着いた緑 */
+.tpl-5-shinryoku {
+  background: linear-gradient(180deg, #e8f5e9 0%, #f1f8e9 100%);
+  border: 2px solid #2e7d32;
+  border-radius: 4px;
+}
+.tpl-5-shinryoku header {
+  border-bottom: 3px double #388e3c;
+}
+.tpl-5-shinryoku h1 { color: #1b5e20; }
+.tpl-5-shinryoku .header-subtitle { color: #388e3c; letter-spacing: 0.4em; }
+.tpl-5-shinryoku .day-header {
+  background: #2e7d32;
+  color: white;
+  border-color: #1b5e20;
+}
+.tpl-5-shinryoku .calendar { border-color: #388e3c; }
+.tpl-5-shinryoku .day-cell { border-color: #a5d6a7; background: #fafff8; }
+.tpl-5-shinryoku .day-cell.empty { background: #ecf5ec; }
+.tpl-5-shinryoku .menu-items li::before { content: '◆'; color: #2e7d32; font-size: 0.5em; top: 3px; }
+.tpl-5-shinryoku .note { background: #e8f5e9; border-color: #66bb6a; color: #1b5e20; }
+
+/* こいのぼり — カラフル・元気 */
+.tpl-5-koinobori {
+  background: linear-gradient(180deg, #e3f2fd 0%, #e8f5e9 30%, #fff9c4 60%, #fce4ec 100%);
+  border: 3px solid #1976d2;
+  border-radius: 12px;
+}
+.tpl-5-koinobori header {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #e53935, #fb8c00, #43a047, #1e88e5) 1;
+}
+.tpl-5-koinobori header::after {
+  content: '🎏  端 午 の 節 句  🎏';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #1976d2;
+  letter-spacing: 0.3em;
+}
+.tpl-5-koinobori h1 { color: #0d47a1; font-size: 2.4rem; }
+.tpl-5-koinobori .header-subtitle { color: #1565c0; font-weight: 500; }
+.tpl-5-koinobori .day-header {
+  background: #e3f2fd;
+  color: #1565c0;
+  border-color: #90caf9;
+  font-weight: 800;
+}
+.tpl-5-koinobori .calendar { border-color: #90caf9; }
+.tpl-5-koinobori .day-cell { border-color: #b0d8f0; background: rgba(255,255,255,0.7); }
+.tpl-5-koinobori .day-cell.empty { background: rgba(227,242,253,0.3); }
+.tpl-5-koinobori .menu-items li::before { content: '▶'; color: #1976d2; font-size: 0.45em; top: 4px; }
+.tpl-5-koinobori .note { background: #e3f2fd; border-color: #64b5f6; color: #0d47a1; }
+
+/* 五月晴れ — 青空・爽快 */
+.tpl-5-satsukibare {
+  background: linear-gradient(180deg, #bbdefb 0%, #e3f2fd 30%, #f5f9ff 100%);
+  border: 1px solid #90caf9;
+  border-radius: 10px;
+}
+.tpl-5-satsukibare header {
+  border-bottom: 2px solid #64b5f6;
+}
+.tpl-5-satsukibare header::after {
+  content: '☀ 五月晴れ ☀';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #f57f17;
+  letter-spacing: 0.4em;
+}
+.tpl-5-satsukibare h1 { color: #0d47a1; }
+.tpl-5-satsukibare .header-subtitle { color: #1565c0; }
+.tpl-5-satsukibare .day-header {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border-color: #90caf9;
+}
+.tpl-5-satsukibare .calendar { border-color: #90caf9; }
+.tpl-5-satsukibare .day-cell { border-color: #b3d9f5; background: rgba(255,255,255,0.85); }
+.tpl-5-satsukibare .day-cell.empty { background: rgba(227,242,253,0.4); }
+.tpl-5-satsukibare .day-number { color: #1565c0; }
+.tpl-5-satsukibare .menu-items li::before { content: '·'; color: #1976d2; font-size: 1.2em; }
+.tpl-5-satsukibare .note { background: #e3f2fd; border-color: #64b5f6; color: #0d47a1; }
+
+/* 藤の花 — 紫×ピンク・優雅 */
+.tpl-5-fuji {
+  background: linear-gradient(160deg, #f3e5f5 0%, #ede7f6 50%, #e8eaf6 100%);
+  border: 1px solid #b39ddb;
+  border-radius: 8px;
+}
+.tpl-5-fuji header {
+  border-bottom: 2px solid #9575cd;
+}
+.tpl-5-fuji header::after {
+  content: '❀ 藤 ❀';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #7e57c2;
+  letter-spacing: 1em;
+}
+.tpl-5-fuji h1 { color: #4527a0; }
+.tpl-5-fuji .header-subtitle { color: #7e57c2; }
+.tpl-5-fuji .day-header {
+  background: #ede7f6;
+  color: #4527a0;
+  border-color: #d1c4e9;
+}
+.tpl-5-fuji .calendar { border-color: #d1c4e9; }
+.tpl-5-fuji .day-cell { border-color: #d8cce8; background: rgba(255,255,255,0.75); }
+.tpl-5-fuji .day-cell.empty { background: rgba(237,231,246,0.4); }
+.tpl-5-fuji .day-number { color: #512da8; }
+.tpl-5-fuji .menu-items li::before { content: '✾'; color: #9575cd; font-size: 0.6em; top: 2px; }
+.tpl-5-fuji .note { background: #ede7f6; border-color: #b39ddb; color: #4527a0; }
+
+/* ─────────────────────────────────────────
+   6月 水無月（みなづき）— 梅雨・紫陽花
+   ───────────────────────────────────────── */
+
+/* 紫陽花 — 青紫グラデーション */
+.tpl-6-ajisai {
+  background: linear-gradient(160deg, #e8eaf6 0%, #e1f5fe 30%, #f3e5f5 60%, #e8eaf6 100%);
+  border: 2px solid #7986cb;
+  border-radius: 14px;
+}
+.tpl-6-ajisai header {
+  border-bottom: 3px solid #5c6bc0;
+}
+.tpl-6-ajisai header::after {
+  content: '💠  紫 陽 花  💠';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #5c6bc0;
+  letter-spacing: 0.4em;
+}
+.tpl-6-ajisai h1 { color: #283593; }
+.tpl-6-ajisai .header-subtitle { color: #5c6bc0; }
+.tpl-6-ajisai .day-header {
+  background: linear-gradient(90deg, #c5cae9, #b3e5fc, #d1c4e9);
+  color: #283593;
+  border-color: #9fa8da;
+}
+.tpl-6-ajisai .calendar { border-color: #9fa8da; }
+.tpl-6-ajisai .day-cell { border-color: #b8c0e0; background: rgba(255,255,255,0.65); }
+.tpl-6-ajisai .day-cell.empty { background: rgba(232,234,246,0.3); }
+.tpl-6-ajisai .menu-items li::before { content: '❖'; color: #5c6bc0; font-size: 0.55em; top: 2px; }
+.tpl-6-ajisai .note { background: #e8eaf6; border-color: #9fa8da; color: #283593; }
+
+/* 雨の日 — グレー×水滴ブルー */
+.tpl-6-amenohi {
+  background: linear-gradient(180deg, #eceff1 0%, #f5f5f5 50%, #e0e0e0 100%);
+  border: 1px solid #b0bec5;
+  border-radius: 6px;
+}
+.tpl-6-amenohi header {
+  border-bottom: 2px dashed #90a4ae;
+}
+.tpl-6-amenohi header::after {
+  content: '☂  ☂  ☂';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #546e7a;
+  letter-spacing: 1.5em;
+}
+.tpl-6-amenohi h1 { color: #37474f; }
+.tpl-6-amenohi .header-subtitle { color: #78909c; }
+.tpl-6-amenohi .day-header {
+  background: #cfd8dc;
+  color: #37474f;
+  border-color: #b0bec5;
+}
+.tpl-6-amenohi .calendar { border-color: #b0bec5; }
+.tpl-6-amenohi .day-cell { border-color: #cfd8dc; background: #fafafa; }
+.tpl-6-amenohi .day-cell.empty { background: #eceff1; }
+.tpl-6-amenohi .day-number { color: #455a64; }
+.tpl-6-amenohi .menu-items li::before { content: '💧'; font-size: 0.45em; top: 3px; }
+.tpl-6-amenohi .note { background: #e0f7fa; border-color: #80deea; color: #00695c; }
+
+/* 蛍 — ダーク緑×黄緑の光・幻想的 */
+.tpl-6-hotaru {
+  background: linear-gradient(160deg, #1b2a1e 0%, #243028 50%, #1a2e22 100%);
+  border: 1px solid #2e5435;
+  color: #c8e6c9;
+}
+.tpl-6-hotaru header {
+  border-bottom: 1px solid #3a6640;
+}
+.tpl-6-hotaru header::after {
+  content: '✦  ·  ✦  ·  ✦';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #aed581;
+  letter-spacing: 0.5em;
+}
+.tpl-6-hotaru h1 { color: #a5d6a7; }
+.tpl-6-hotaru .header-subtitle { color: #81c784; }
+.tpl-6-hotaru .day-header {
+  background: #1e3525;
+  color: #a5d6a7;
+  border-color: #2e5435;
+}
+.tpl-6-hotaru .calendar { border-color: #2e5435; background: rgba(27,42,30,0.5); }
+.tpl-6-hotaru .day-cell {
+  border-color: #2e5435;
+  background: rgba(30,50,35,0.8);
+  color: #c8e6c9;
+}
+.tpl-6-hotaru .day-cell.empty { background: rgba(27,42,30,0.6); }
+.tpl-6-hotaru .day-cell:hover { box-shadow: inset 0 0 0 2px #aed581; }
+.tpl-6-hotaru .day-number { color: #a5d6a7; }
+.tpl-6-hotaru .menu-items li { color: #c8e6c9; }
+.tpl-6-hotaru .menu-items li::before { content: '●'; color: #c6ff00; font-size: 0.35em; top: 5px; }
+.tpl-6-hotaru .note { background: #1e3525; border-color: #3a6640; color: #a5d6a7; }
+.tpl-6-hotaru .special-menu-title { color: #c6ff00; }
+
+/* 虹 — レインボー・明るい */
+.tpl-6-niji {
+  background: #fff;
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #e53935, #fb8c00, #fdd835, #43a047, #1e88e5, #8e24aa) 1;
+  border-radius: 0;
+}
+.tpl-6-niji header {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #e53935, #fb8c00, #fdd835, #43a047, #1e88e5, #8e24aa) 1;
+}
+.tpl-6-niji header::after {
+  content: '🌈';
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 4px;
+}
+.tpl-6-niji h1 { color: #1565c0; }
+.tpl-6-niji .header-subtitle { color: #7b1fa2; }
+.tpl-6-niji .day-header {
+  background: #f5f5f5;
+  color: #424242;
+  border-color: #e0e0e0;
+}
+.tpl-6-niji .calendar { border-color: #e0e0e0; }
+.tpl-6-niji .day-cell { border-color: #eeeeee; background: #fff; }
+.tpl-6-niji .day-cell.empty { background: #fafafa; }
+.tpl-6-niji .menu-items li::before { content: '•'; color: #7b1fa2; }
+.tpl-6-niji .note { background: #ede7f6; border-color: #b39ddb; color: #4527a0; }
+
+/* ─────────────────────────────────────────
+   7月 文月（ふみづき）— 七夕・夏
+   ───────────────────────────────────────── */
+
+/* 七夕 — 星空×紺 */
+.tpl-7-tanabata {
+  background: linear-gradient(180deg, #0a1628 0%, #152238 60%, #1a2b48 100%);
+  border: 1px solid #2a4570;
+  color: #d0dce8;
+}
+.tpl-7-tanabata header {
+  border-bottom: 1px solid #2a4570;
+}
+.tpl-7-tanabata header::after {
+  content: '🎋  七 夕  ⭐';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ffd54f;
+  letter-spacing: 0.4em;
+}
+.tpl-7-tanabata h1 { color: #90caf9; }
+.tpl-7-tanabata .header-subtitle { color: #64b5f6; }
+.tpl-7-tanabata .day-header {
+  background: #122240;
+  color: #90caf9;
+  border-color: #2a4570;
+}
+.tpl-7-tanabata .calendar { border-color: #2a4570; background: rgba(10,22,40,0.5); }
+.tpl-7-tanabata .day-cell {
+  border-color: #2a4570;
+  background: rgba(21,34,56,0.8);
+  color: #c8dce8;
+}
+.tpl-7-tanabata .day-cell.empty { background: rgba(10,22,40,0.5); }
+.tpl-7-tanabata .day-cell:hover { box-shadow: inset 0 0 0 2px #ffd54f; }
+.tpl-7-tanabata .day-number { color: #bbdefb; }
+.tpl-7-tanabata .menu-items li { color: #b0c8e0; }
+.tpl-7-tanabata .menu-items li::before { content: '☆'; color: #ffd54f; font-size: 0.55em; top: 3px; }
+.tpl-7-tanabata .note { background: #1a3050; border-color: #2a4570; color: #90caf9; }
+.tpl-7-tanabata .special-menu-title { color: #ffd54f; }
+
+/* 向日葵 — 黄色×オレンジ・元気 */
+.tpl-7-himawari {
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 50%, #fff9c4 100%);
+  border: 3px solid #f9a825;
+  border-radius: 10px;
+}
+.tpl-7-himawari header {
+  border-bottom: 3px solid #f57f17;
+}
+.tpl-7-himawari header::after {
+  content: '🌻  🌻  🌻';
+  display: block;
+  font-size: 1rem;
+  margin-top: 6px;
+  letter-spacing: 0.6em;
+}
+.tpl-7-himawari h1 { color: #e65100; }
+.tpl-7-himawari .header-subtitle { color: #f57f17; }
+.tpl-7-himawari .day-header {
+  background: #fff3e0;
+  color: #e65100;
+  border-color: #ffcc80;
+  font-weight: 800;
+}
+.tpl-7-himawari .calendar { border-color: #ffcc80; }
+.tpl-7-himawari .day-cell { border-color: #ffe0a0; background: #fffdf5; }
+.tpl-7-himawari .day-cell.empty { background: #fff8e8; }
+.tpl-7-himawari .day-number { color: #e65100; }
+.tpl-7-himawari .menu-items li::before { content: '✿'; color: #f9a825; font-size: 0.6em; top: 2px; }
+.tpl-7-himawari .note { background: #fff8e1; border-color: #ffd54f; color: #f57f17; }
+
+/* 海 — マリンブルー */
+.tpl-7-umi {
+  background: linear-gradient(180deg, #e0f2f1 0%, #b2dfdb 30%, #e0f7fa 60%, #e0f2f1 100%);
+  border: 2px solid #00897b;
+  border-radius: 8px;
+}
+.tpl-7-umi header {
+  border-bottom: 3px wavy #00897b;
+}
+.tpl-7-umi header::after {
+  content: '🌊  MARINE  🐚';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #00695c;
+  letter-spacing: 0.3em;
+}
+.tpl-7-umi h1 { color: #004d40; }
+.tpl-7-umi .header-subtitle { color: #00897b; }
+.tpl-7-umi .day-header {
+  background: #b2dfdb;
+  color: #004d40;
+  border-color: #80cbc4;
+}
+.tpl-7-umi .calendar { border-color: #80cbc4; }
+.tpl-7-umi .day-cell { border-color: #a0d8d0; background: rgba(255,255,255,0.7); }
+.tpl-7-umi .day-cell.empty { background: rgba(224,242,241,0.4); }
+.tpl-7-umi .day-number { color: #00695c; }
+.tpl-7-umi .menu-items li::before { content: '〜'; color: #00897b; }
+.tpl-7-umi .note { background: #e0f2f1; border-color: #80cbc4; color: #004d40; }
+
+/* 夏祭り — 赤×紺・提灯風 */
+.tpl-7-matsuri {
+  background: #1a1a2e;
+  border: none;
+  border-top: 6px solid #c62828;
+  border-bottom: 6px solid #c62828;
+  border-radius: 0;
+  color: #f0e6d6;
+}
+.tpl-7-matsuri header {
+  border-bottom: none;
+  background: #c62828;
+  margin: -30px -30px 20px -30px;
+  padding: 20px 30px 16px;
+}
+.tpl-7-matsuri header::after {
+  content: '🏮  夏 祭 り  🏮';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #ffd54f;
+  letter-spacing: 0.4em;
+}
+.tpl-7-matsuri h1 { color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.tpl-7-matsuri .header-subtitle { color: rgba(255,255,255,0.85); }
+.tpl-7-matsuri .day-header {
+  background: #1e1e35;
+  color: #ef9a9a;
+  border-color: #333355;
+  font-weight: 800;
+}
+.tpl-7-matsuri .calendar { border-color: #333355; background: rgba(26,26,46,0.5); }
+.tpl-7-matsuri .day-cell {
+  border-color: #333355;
+  background: rgba(30,30,50,0.8);
+  color: #e0d8c8;
+}
+.tpl-7-matsuri .day-cell.empty { background: rgba(26,26,46,0.6); }
+.tpl-7-matsuri .day-cell:hover { box-shadow: inset 0 0 0 2px #c62828; }
+.tpl-7-matsuri .day-number { color: #ef9a9a; }
+.tpl-7-matsuri .menu-items li { color: #d8d0c0; }
+.tpl-7-matsuri .menu-items li::before { content: '■'; color: #c62828; font-size: 0.4em; top: 4px; }
+.tpl-7-matsuri .note { background: #2a2a45; border-color: #444465; color: #ef9a9a; }
+.tpl-7-matsuri .special-menu-title { color: #ffd54f; }
+
+/* ─────────────────────────────────────────
+   8月 葉月（はづき）— 真夏・花火
+   ───────────────────────────────────────── */
+
+/* 花火 — 夜空×色鮮やか */
+.tpl-8-hanabi {
+  background: linear-gradient(180deg, #0d0d1a 0%, #1a1a30 60%, #15152a 100%);
+  border: 1px solid #333355;
+  color: #e0d8f0;
+}
+.tpl-8-hanabi header {
+  border-bottom: 1px solid #444465;
+}
+.tpl-8-hanabi header::after {
+  content: '🎆  花 火 大 会  🎇';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ffd54f;
+  letter-spacing: 0.3em;
+}
+.tpl-8-hanabi h1 { color: #ce93d8; }
+.tpl-8-hanabi .header-subtitle { color: #ba68c8; }
+.tpl-8-hanabi .day-header {
+  background: #1a1a30;
+  color: #ce93d8;
+  border-color: #333355;
+}
+.tpl-8-hanabi .calendar { border-color: #333355; background: rgba(13,13,26,0.5); }
+.tpl-8-hanabi .day-cell {
+  border-color: #2a2a45;
+  background: rgba(26,26,48,0.8);
+  color: #d8d0e8;
+}
+.tpl-8-hanabi .day-cell.empty { background: rgba(13,13,26,0.5); }
+.tpl-8-hanabi .day-cell:hover { box-shadow: inset 0 0 0 2px #ce93d8; }
+.tpl-8-hanabi .day-number { color: #e1bee7; }
+.tpl-8-hanabi .menu-items li { color: #c8c0d8; }
+.tpl-8-hanabi .menu-items li::before { content: '✦'; color: #ffd54f; font-size: 0.5em; top: 3px; }
+.tpl-8-hanabi .note { background: #252540; border-color: #444465; color: #ce93d8; }
+.tpl-8-hanabi .special-menu-title { color: #ffd54f; }
+
+/* トロピカル — ビビッドカラー */
+.tpl-8-tropical {
+  background: linear-gradient(160deg, #e0f7fa 0%, #e8f5e9 30%, #fff9c4 60%, #fce4ec 100%);
+  border: 3px solid #00bcd4;
+  border-radius: 16px;
+}
+.tpl-8-tropical header {
+  border-bottom: 3px solid #00acc1;
+}
+.tpl-8-tropical header::after {
+  content: '🌴  TROPICAL  🍹';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #00838f;
+  letter-spacing: 0.3em;
+}
+.tpl-8-tropical h1 { color: #00695c; }
+.tpl-8-tropical .header-subtitle { color: #00897b; }
+.tpl-8-tropical .day-header {
+  background: linear-gradient(90deg, #80deea, #a5d6a7, #fff59d);
+  color: #004d40;
+  border-color: #4dd0e1;
+  font-weight: 800;
+}
+.tpl-8-tropical .calendar { border-color: #4dd0e1; }
+.tpl-8-tropical .day-cell { border-color: #80deea; background: rgba(255,255,255,0.65); }
+.tpl-8-tropical .day-cell.empty { background: rgba(224,247,250,0.3); }
+.tpl-8-tropical .day-number { color: #006064; font-weight: 800; }
+.tpl-8-tropical .menu-items li::before { content: '🌺'; font-size: 0.45em; top: 4px; }
+.tpl-8-tropical .note { background: #e0f7fa; border-color: #4dd0e1; color: #006064; }
+
+/* 真夏日 — オレンジ×青空 */
+.tpl-8-natsu {
+  background: linear-gradient(180deg, #42a5f5 0%, #64b5f6 20%, #fff9c4 50%, #ffcc80 100%);
+  border: 2px solid #ef6c00;
+  border-radius: 10px;
+}
+.tpl-8-natsu header {
+  border-bottom: 2px solid #e65100;
+}
+.tpl-8-natsu header::after {
+  content: '☀ 真 夏 日 和 ☀';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #e65100;
+  letter-spacing: 0.4em;
+}
+.tpl-8-natsu h1 { color: #bf360c; }
+.tpl-8-natsu .header-subtitle { color: #e65100; }
+.tpl-8-natsu .day-header {
+  background: #ff8f00;
+  color: white;
+  border-color: #ef6c00;
+  font-weight: 800;
+}
+.tpl-8-natsu .calendar { border-color: #ffb74d; }
+.tpl-8-natsu .day-cell { border-color: #ffd8a0; background: rgba(255,255,255,0.8); }
+.tpl-8-natsu .day-cell.empty { background: rgba(255,249,196,0.4); }
+.tpl-8-natsu .day-number { color: #e65100; }
+.tpl-8-natsu .menu-items li::before { content: '●'; color: #ff8f00; font-size: 0.4em; top: 4px; }
+.tpl-8-natsu .note { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
+
+/* スイカ — 赤×緑 */
+.tpl-8-suika {
+  background: #f1f8e9;
+  border: 4px solid #388e3c;
+  border-radius: 20px;
+}
+.tpl-8-suika header {
+  border-bottom: 4px solid #d32f2f;
+}
+.tpl-8-suika header::after {
+  content: '🍉  🍉  🍉';
+  display: block;
+  font-size: 1rem;
+  margin-top: 6px;
+  letter-spacing: 0.6em;
+}
+.tpl-8-suika h1 { color: #c62828; }
+.tpl-8-suika .header-subtitle { color: #2e7d32; }
+.tpl-8-suika .day-header {
+  background: #388e3c;
+  color: white;
+  border-color: #2e7d32;
+  font-weight: 800;
+}
+.tpl-8-suika .calendar { border-color: #66bb6a; }
+.tpl-8-suika .day-cell { border-color: #a5d6a7; background: #fefff8; }
+.tpl-8-suika .day-cell.empty { background: #e8f5e9; }
+.tpl-8-suika .day-number { color: #c62828; font-weight: 800; }
+.tpl-8-suika .menu-items li::before { content: '▸'; color: #d32f2f; }
+.tpl-8-suika .note { background: #ffebee; border-color: #e57373; color: #c62828; }
+
+/* ─────────────────────────────────────────
+   9月 長月（ながつき）— 秋の始まり
+   ───────────────────────────────────────── */
+
+/* お月見 — 紺×金・月 */
+.tpl-9-otsukimi {
+  background: linear-gradient(180deg, #1a1a2e 0%, #1e2240 50%, #252850 100%);
+  border: 1px solid #3a3a60;
+  color: #d8d0e0;
+}
+.tpl-9-otsukimi header {
+  border-bottom: 1px solid #4a4a70;
+}
+.tpl-9-otsukimi header::after {
+  content: '🌾  十 五 夜  🌕';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ffd54f;
+  letter-spacing: 0.4em;
+}
+.tpl-9-otsukimi h1 { color: #c8b8d8; }
+.tpl-9-otsukimi .header-subtitle { color: #a090b8; }
+.tpl-9-otsukimi .day-header {
+  background: #1e2240;
+  color: #b8a8d0;
+  border-color: #3a3a60;
+}
+.tpl-9-otsukimi .calendar { border-color: #3a3a60; background: rgba(26,26,46,0.5); }
+.tpl-9-otsukimi .day-cell {
+  border-color: #3a3a60;
+  background: rgba(30,34,64,0.8);
+  color: #d0c8e0;
+}
+.tpl-9-otsukimi .day-cell.empty { background: rgba(26,26,46,0.5); }
+.tpl-9-otsukimi .day-cell:hover { box-shadow: inset 0 0 0 2px #ffd54f; }
+.tpl-9-otsukimi .day-number { color: #c8b8d8; }
+.tpl-9-otsukimi .menu-items li { color: #c0b8d0; }
+.tpl-9-otsukimi .menu-items li::before { content: '◦'; color: #ffd54f; }
+.tpl-9-otsukimi .note { background: #252850; border-color: #4a4a70; color: #c8b8d8; }
+.tpl-9-otsukimi .special-menu-title { color: #ffd54f; }
+
+/* 秋桜 — ピンク×ラベンダー */
+.tpl-9-cosmos {
+  background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
+  border: 1px solid #ce93d8;
+  border-radius: 12px;
+}
+.tpl-9-cosmos header {
+  border-bottom: 2px solid #ab47bc;
+}
+.tpl-9-cosmos header::after {
+  content: '✿  秋 桜  ✿';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #8e24aa;
+  letter-spacing: 0.5em;
+}
+.tpl-9-cosmos h1 { color: #6a1b9a; }
+.tpl-9-cosmos .header-subtitle { color: #8e24aa; }
+.tpl-9-cosmos .day-header {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border-color: #e1bee7;
+}
+.tpl-9-cosmos .calendar { border-color: #e1bee7; }
+.tpl-9-cosmos .day-cell { border-color: #e8d0f0; background: rgba(255,255,255,0.7); }
+.tpl-9-cosmos .day-cell.empty { background: rgba(243,229,245,0.3); }
+.tpl-9-cosmos .day-number { color: #7b1fa2; }
+.tpl-9-cosmos .menu-items li::before { content: '❀'; color: #ce93d8; font-size: 0.6em; top: 2px; }
+.tpl-9-cosmos .note { background: #f3e5f5; border-color: #ce93d8; color: #6a1b9a; }
+
+/* 実りの秋 — オレンジ×茶 */
+.tpl-9-minori {
+  background: linear-gradient(160deg, #fff3e0 0%, #fff8e1 50%, #fbe9e7 100%);
+  border: 2px solid #e65100;
+  border-radius: 6px;
+}
+.tpl-9-minori header {
+  border-bottom: 3px double #bf360c;
+}
+.tpl-9-minori header::after {
+  content: '🌾  実 り の 秋  🍂';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #bf360c;
+  letter-spacing: 0.4em;
+}
+.tpl-9-minori h1 { color: #bf360c; }
+.tpl-9-minori .header-subtitle { color: #e65100; }
+.tpl-9-minori .day-header {
+  background: #ffe0b2;
+  color: #bf360c;
+  border-color: #ffcc80;
+}
+.tpl-9-minori .calendar { border-color: #ffcc80; }
+.tpl-9-minori .day-cell { border-color: #ffd8a0; background: #fffcf5; }
+.tpl-9-minori .day-cell.empty { background: #fff5e8; }
+.tpl-9-minori .day-number { color: #e65100; }
+.tpl-9-minori .menu-items li::before { content: '◆'; color: #e65100; font-size: 0.5em; top: 3px; }
+.tpl-9-minori .note { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
+
+/* 彼岸花 — 深紅×ダーク緑 */
+.tpl-9-higanbana {
+  background: #faf5f0;
+  border: none;
+  border-top: 5px solid #b71c1c;
+  border-bottom: 2px solid #b71c1c;
+  border-radius: 0;
+}
+.tpl-9-higanbana header {
+  border-bottom: 2px solid #c62828;
+}
+.tpl-9-higanbana header::after {
+  content: '彼 岸 花';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #b71c1c;
+  letter-spacing: 1em;
+  font-weight: 300;
+}
+.tpl-9-higanbana h1 { color: #880e4f; }
+.tpl-9-higanbana .header-subtitle { color: #b71c1c; }
+.tpl-9-higanbana .day-header {
+  background: #f5e8e8;
+  color: #4a1a2a;
+  border-color: #d4a0a0;
+}
+.tpl-9-higanbana .calendar { border-color: #d4a0a0; }
+.tpl-9-higanbana .day-cell { border-color: #e0c0c0; background: #fefaf8; }
+.tpl-9-higanbana .day-cell.empty { background: #f8f0ee; }
+.tpl-9-higanbana .day-number { color: #880e4f; }
+.tpl-9-higanbana .menu-items li::before { content: '❁'; color: #c62828; font-size: 0.6em; top: 2px; }
+.tpl-9-higanbana .note { background: #ffebee; border-color: #ef9a9a; color: #b71c1c; }
+
+/* ─────────────────────────────────────────
+   10月 神無月（かんなづき）— ハロウィン・紅葉
+   ───────────────────────────────────────── */
+
+/* ハロウィン — オレンジ×黒 */
+.tpl-10-halloween {
+  background: linear-gradient(180deg, #1a1a1a 0%, #2a2020 50%, #1a1a1a 100%);
+  border: 3px solid #ff6f00;
+  border-radius: 0;
+  color: #f5e6d0;
+}
+.tpl-10-halloween header {
+  border-bottom: 3px solid #e65100;
+}
+.tpl-10-halloween header::after {
+  content: '🎃  TRICK or TREAT  👻';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ff8f00;
+  letter-spacing: 0.2em;
+}
+.tpl-10-halloween h1 { color: #ff8f00; }
+.tpl-10-halloween .header-subtitle { color: #ffb74d; }
+.tpl-10-halloween .day-header {
+  background: #ff6f00;
+  color: #1a1a1a;
+  border-color: #e65100;
+  font-weight: 800;
+}
+.tpl-10-halloween .calendar { border-color: #4a3020; background: rgba(26,26,26,0.5); }
+.tpl-10-halloween .day-cell {
+  border-color: #3a2a20;
+  background: rgba(40,30,25,0.85);
+  color: #e8d8c8;
+}
+.tpl-10-halloween .day-cell.empty { background: rgba(26,26,26,0.6); }
+.tpl-10-halloween .day-cell:hover { box-shadow: inset 0 0 0 2px #ff6f00; }
+.tpl-10-halloween .day-number { color: #ffb74d; }
+.tpl-10-halloween .menu-items li { color: #d8c8b8; }
+.tpl-10-halloween .menu-items li::before { content: '🎃'; font-size: 0.45em; top: 4px; }
+.tpl-10-halloween .note { background: #3a2a18; border-color: #5a4030; color: #ffb74d; }
+.tpl-10-halloween .special-menu-title { color: #ff8f00; }
+
+/* 紅葉 — 赤×橙×金 */
+.tpl-10-kouyou {
+  background: linear-gradient(160deg, #fff3e0 0%, #fbe9e7 30%, #fff8e1 60%, #fce4ec 100%);
+  border: 2px solid #d84315;
+  border-radius: 8px;
+}
+.tpl-10-kouyou header {
+  border-bottom: 3px double #bf360c;
+}
+.tpl-10-kouyou header::after {
+  content: '🍁  紅 葉  🍁';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #d84315;
+  letter-spacing: 0.5em;
+}
+.tpl-10-kouyou h1 { color: #bf360c; }
+.tpl-10-kouyou .header-subtitle { color: #d84315; }
+.tpl-10-kouyou .day-header {
+  background: linear-gradient(90deg, #ffccbc, #ffecb3, #ffccbc);
+  color: #bf360c;
+  border-color: #ffab91;
+}
+.tpl-10-kouyou .calendar { border-color: #ffab91; }
+.tpl-10-kouyou .day-cell { border-color: #ffc8a8; background: rgba(255,255,255,0.75); }
+.tpl-10-kouyou .day-cell.empty { background: rgba(251,233,231,0.3); }
+.tpl-10-kouyou .day-number { color: #d84315; }
+.tpl-10-kouyou .menu-items li::before { content: '🍂'; font-size: 0.45em; top: 4px; }
+.tpl-10-kouyou .note { background: #fff3e0; border-color: #ffcc80; color: #e65100; }
+
+/* 秋の実り — 茶×ベージュ */
+.tpl-10-akiminori {
+  background: linear-gradient(180deg, #efebe9 0%, #f5f0ea 50%, #faf5ef 100%);
+  border: 2px solid #8d6e63;
+  border-radius: 4px;
+}
+.tpl-10-akiminori header {
+  border-bottom: 3px double #795548;
+}
+.tpl-10-akiminori header::after {
+  content: '🌰  秋 の 味 覚  🍇';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #5d4037;
+  letter-spacing: 0.3em;
+}
+.tpl-10-akiminori h1 { color: #3e2723; }
+.tpl-10-akiminori .header-subtitle { color: #6d4c41; letter-spacing: 0.5em; }
+.tpl-10-akiminori .day-header {
+  background: #d7ccc8;
+  color: #3e2723;
+  border-color: #bcaaa4;
+}
+.tpl-10-akiminori .calendar { border-color: #bcaaa4; }
+.tpl-10-akiminori .day-cell { border-color: #d7ccc8; background: #fefcfa; }
+.tpl-10-akiminori .day-cell.empty { background: #f0ece8; }
+.tpl-10-akiminori .day-number { color: #4e342e; }
+.tpl-10-akiminori .menu-items li::before { content: '◆'; color: #8d6e63; font-size: 0.5em; top: 3px; }
+.tpl-10-akiminori .note { background: #efebe9; border-color: #bcaaa4; color: #4e342e; }
+
+/* 十三夜 — 藍×銀 */
+.tpl-10-juusanya {
+  background: linear-gradient(180deg, #1a1a30 0%, #202040 50%, #1a1a35 100%);
+  border: 1px solid #3a3a60;
+  border-radius: 6px;
+  color: #c8c8e0;
+}
+.tpl-10-juusanya header {
+  border-bottom: 1px solid #4a4a70;
+}
+.tpl-10-juusanya header::after {
+  content: '🌕  十 三 夜  🌾';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #c0c0c0;
+  letter-spacing: 0.4em;
+}
+.tpl-10-juusanya h1 { color: #b0b0d0; }
+.tpl-10-juusanya .header-subtitle { color: #9090b0; }
+.tpl-10-juusanya .day-header {
+  background: #252545;
+  color: #a0a0c0;
+  border-color: #3a3a60;
+}
+.tpl-10-juusanya .calendar { border-color: #3a3a60; background: rgba(26,26,48,0.5); }
+.tpl-10-juusanya .day-cell {
+  border-color: #3a3a60;
+  background: rgba(32,32,64,0.8);
+  color: #c0c0d8;
+}
+.tpl-10-juusanya .day-cell.empty { background: rgba(26,26,48,0.5); }
+.tpl-10-juusanya .day-cell:hover { box-shadow: inset 0 0 0 2px #c0c0c0; }
+.tpl-10-juusanya .day-number { color: #b0b0d0; }
+.tpl-10-juusanya .menu-items li { color: #b0b0c8; }
+.tpl-10-juusanya .menu-items li::before { content: '◦'; color: #c0c0c0; }
+.tpl-10-juusanya .note { background: #252545; border-color: #4a4a70; color: #b0b0d0; }
+.tpl-10-juusanya .special-menu-title { color: #daa520; }
+
+/* ─────────────────────────────────────────
+   11月 霜月（しもつき）— 晩秋
+   ───────────────────────────────────────── */
+
+/* 紅葉狩り — 深紅×橙 */
+.tpl-11-momijigari {
+  background: linear-gradient(160deg, #fbe9e7 0%, #ffccbc 30%, #ffe0b2 60%, #fff3e0 100%);
+  border: 2px solid #c62828;
+  border-radius: 8px;
+}
+.tpl-11-momijigari header {
+  border-bottom: 3px solid #b71c1c;
+}
+.tpl-11-momijigari header::after {
+  content: '🍁 🍂 🍁 🍂 🍁';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  letter-spacing: 0.3em;
+}
+.tpl-11-momijigari h1 { color: #b71c1c; }
+.tpl-11-momijigari .header-subtitle { color: #d32f2f; }
+.tpl-11-momijigari .day-header {
+  background: #ffccbc;
+  color: #bf360c;
+  border-color: #ffab91;
+}
+.tpl-11-momijigari .calendar { border-color: #ffab91; }
+.tpl-11-momijigari .day-cell { border-color: #ffc8a8; background: rgba(255,255,255,0.7); }
+.tpl-11-momijigari .day-cell.empty { background: rgba(251,233,231,0.3); }
+.tpl-11-momijigari .day-number { color: #c62828; }
+.tpl-11-momijigari .menu-items li::before { content: '🍁'; font-size: 0.45em; top: 4px; }
+.tpl-11-momijigari .note { background: #ffebee; border-color: #ef9a9a; color: #b71c1c; }
+
+/* 落ち葉 — 茶×ベージュ・ナチュラル */
+.tpl-11-ochiba {
+  background: linear-gradient(180deg, #efebe9 0%, #f5f0e8 50%, #ede5d8 100%);
+  border: 1px solid #a1887f;
+  border-radius: 10px;
+}
+.tpl-11-ochiba header {
+  border-bottom: 2px dashed #a1887f;
+}
+.tpl-11-ochiba header::after {
+  content: '🍂  落 ち 葉  🍂';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #6d4c41;
+  letter-spacing: 0.4em;
+}
+.tpl-11-ochiba h1 { color: #4e342e; }
+.tpl-11-ochiba .header-subtitle { color: #795548; }
+.tpl-11-ochiba .day-header {
+  background: #d7ccc8;
+  color: #3e2723;
+  border-color: #bcaaa4;
+}
+.tpl-11-ochiba .calendar { border-color: #bcaaa4; }
+.tpl-11-ochiba .day-cell { border-color: #d7ccc8; background: rgba(255,255,255,0.8); }
+.tpl-11-ochiba .day-cell.empty { background: rgba(239,235,233,0.5); }
+.tpl-11-ochiba .day-number { color: #5d4037; }
+.tpl-11-ochiba .menu-items li::before { content: '–'; color: #8d6e63; }
+.tpl-11-ochiba .note { background: #efebe9; border-color: #bcaaa4; color: #4e342e; }
+
+/* 木枯らし — グレー×茶・シック */
+.tpl-11-kogarashi {
+  background: #f5f5f5;
+  border: none;
+  border-left: 5px solid #616161;
+  border-radius: 0;
+}
+.tpl-11-kogarashi header {
+  border-bottom: 1px solid #bdbdbd;
+  text-align: left;
+  padding-left: 10px;
+}
+.tpl-11-kogarashi h1 {
+  color: #424242;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+.tpl-11-kogarashi .header-subtitle { color: #757575; letter-spacing: 0.2em; }
+.tpl-11-kogarashi .day-header {
+  background: #eeeeee;
+  color: #424242;
+  border-color: #e0e0e0;
+  font-weight: 500;
+}
+.tpl-11-kogarashi .calendar { border-color: #e0e0e0; }
+.tpl-11-kogarashi .day-cell { border-color: #e0e0e0; background: #fafafa; }
+.tpl-11-kogarashi .day-cell.empty { background: #f0f0f0; }
+.tpl-11-kogarashi .day-number { color: #424242; font-weight: 400; }
+.tpl-11-kogarashi .menu-items li::before { content: '▸'; color: #9e9e9e; }
+.tpl-11-kogarashi .note { background: #f5f5f5; border-color: #e0e0e0; color: #616161; }
+
+/* 七五三 — 赤×金・華やか */
+.tpl-11-shichigosan {
+  background: #fefaf5;
+  border: 2px solid #c0392b;
+  border-radius: 4px;
+}
+.tpl-11-shichigosan header {
+  border-bottom: 3px double #b8860b;
+  padding-bottom: 18px;
+}
+.tpl-11-shichigosan header::after {
+  content: '🎀  七 五 三  🎀';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #b8860b;
+  letter-spacing: 0.4em;
+}
+.tpl-11-shichigosan h1 { color: #8b0000; }
+.tpl-11-shichigosan .header-subtitle { color: #b8860b; letter-spacing: 0.5em; }
+.tpl-11-shichigosan .day-header {
+  background: linear-gradient(180deg, #fff8e1, #fff3cd);
+  color: #8b0000;
+  border-color: #daa520;
+}
+.tpl-11-shichigosan .calendar { border-color: #daa520; }
+.tpl-11-shichigosan .day-cell { border-color: #e8c860; background: #fefcf5; }
+.tpl-11-shichigosan .day-cell.empty { background: #faf5e8; }
+.tpl-11-shichigosan .day-number { color: #8b0000; }
+.tpl-11-shichigosan .menu-items li::before { content: '◇'; color: #b8860b; font-size: 0.6em; }
+.tpl-11-shichigosan .note { background: #fff8e1; border-color: #ffd54f; color: #f57f17; }
+
+/* ─────────────────────────────────────────
+   12月 師走（しわす）— 冬・クリスマス
+   ───────────────────────────────────────── */
+
+/* クリスマス — 赤×緑×金 */
+.tpl-12-christmas {
+  background: linear-gradient(160deg, #f1f8e9 0%, #fff8f0 50%, #fce4ec 100%);
+  border: 3px solid #c62828;
+  border-radius: 10px;
+}
+.tpl-12-christmas header {
+  border-bottom: 3px solid #2e7d32;
+}
+.tpl-12-christmas header::after {
+  content: '🎄  Merry Christmas  🎅';
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #c62828;
+  letter-spacing: 0.2em;
+}
+.tpl-12-christmas h1 { color: #1b5e20; }
+.tpl-12-christmas .header-subtitle { color: #c62828; }
+.tpl-12-christmas .day-header {
+  background: #c62828;
+  color: white;
+  border-color: #b71c1c;
+  font-weight: 800;
+}
+.tpl-12-christmas .calendar { border-color: #2e7d32; }
+.tpl-12-christmas .day-cell { border-color: #a5d6a7; background: rgba(255,255,255,0.85); }
+.tpl-12-christmas .day-cell.empty { background: #f0f8f0; }
+.tpl-12-christmas .day-number { color: #1b5e20; font-weight: 800; }
+.tpl-12-christmas .menu-items li::before { content: '🎄'; font-size: 0.45em; top: 4px; }
+.tpl-12-christmas .note { background: #ffebee; border-color: #ef9a9a; color: #c62828; }
+
+/* 冬の森 — 深緑×白雪 */
+.tpl-12-fuyunomori {
+  background: linear-gradient(180deg, #e8f5e9 0%, #f1f8e9 40%, #ffffff 100%);
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
+}
+.tpl-12-fuyunomori header {
+  border-bottom: 3px double #388e3c;
+}
+.tpl-12-fuyunomori header::after {
+  content: '🌲  冬 の 森  🌲';
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: #2e7d32;
+  letter-spacing: 0.4em;
+}
+.tpl-12-fuyunomori h1 { color: #1b5e20; }
+.tpl-12-fuyunomori .header-subtitle { color: #388e3c; letter-spacing: 0.4em; }
+.tpl-12-fuyunomori .day-header {
+  background: #c8e6c9;
+  color: #1b5e20;
+  border-color: #a5d6a7;
+}
+.tpl-12-fuyunomori .calendar { border-color: #a5d6a7; }
+.tpl-12-fuyunomori .day-cell { border-color: #c8e6c9; background: rgba(255,255,255,0.9); }
+.tpl-12-fuyunomori .day-cell.empty { background: #ecf5ec; }
+.tpl-12-fuyunomori .day-number { color: #2e7d32; }
+.tpl-12-fuyunomori .menu-items li::before { content: '◆'; color: #388e3c; font-size: 0.5em; top: 3px; }
+.tpl-12-fuyunomori .note { background: #e8f5e9; border-color: #81c784; color: #1b5e20; }
+
+/* 雪の結晶 — 白×アイスブルー */
+.tpl-12-yukino {
+  background: linear-gradient(180deg, #e3f2fd 0%, #f5f9ff 40%, #ffffff 100%);
+  border: 1px solid #90caf9;
+  border-radius: 16px;
+}
+.tpl-12-yukino header {
+  border-bottom: 2px solid #64b5f6;
+}
+.tpl-12-yukino header::after {
+  content: '❄  ❅  ❆  ❅  ❄';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #42a5f5;
+  letter-spacing: 0.6em;
+}
+.tpl-12-yukino h1 { color: #1565c0; }
+.tpl-12-yukino .header-subtitle { color: #1e88e5; }
+.tpl-12-yukino .day-header {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border-color: #bbdefb;
+}
+.tpl-12-yukino .calendar { border-color: #bbdefb; }
+.tpl-12-yukino .day-cell { border-color: #c8e0f0; background: rgba(255,255,255,0.9); }
+.tpl-12-yukino .day-cell.empty { background: #f0f7fd; }
+.tpl-12-yukino .day-number { color: #1565c0; }
+.tpl-12-yukino .menu-items li::before { content: '❅'; color: #42a5f5; font-size: 0.55em; top: 2px; }
+.tpl-12-yukino .note { background: #e3f2fd; border-color: #90caf9; color: #0d47a1; }
+
+/* 年越し — 紺×金・重厚 */
+.tpl-12-toshikoshi {
+  background: linear-gradient(180deg, #1a1a30 0%, #20203a 50%, #1a1a2e 100%);
+  border: 2px solid #b8860b;
+  border-radius: 4px;
+  color: #e0d8c8;
+}
+.tpl-12-toshikoshi header {
+  border-bottom: 2px solid #daa520;
+}
+.tpl-12-toshikoshi header::after {
+  content: '除 夜 の 鐘';
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #daa520;
+  letter-spacing: 1em;
+  font-weight: 300;
+}
+.tpl-12-toshikoshi h1 { color: #c8b8a0; }
+.tpl-12-toshikoshi .header-subtitle { color: #a09070; }
+.tpl-12-toshikoshi .day-header {
+  background: #252540;
+  color: #c8b8a0;
+  border-color: #3a3a55;
+}
+.tpl-12-toshikoshi .calendar { border-color: #3a3a55; background: rgba(26,26,48,0.5); }
+.tpl-12-toshikoshi .day-cell {
+  border-color: #3a3a55;
+  background: rgba(32,32,58,0.8);
+  color: #d0c8b8;
+}
+.tpl-12-toshikoshi .day-cell.empty { background: rgba(26,26,48,0.5); }
+.tpl-12-toshikoshi .day-cell:hover { box-shadow: inset 0 0 0 2px #daa520; }
+.tpl-12-toshikoshi .day-number { color: #c8b8a0; }
+.tpl-12-toshikoshi .menu-items li { color: #c0b8a8; }
+.tpl-12-toshikoshi .menu-items li::before { content: '◇'; color: #daa520; font-size: 0.6em; }
+.tpl-12-toshikoshi .note { background: #252540; border-color: #4a4a65; color: #c8b8a0; }
+.tpl-12-toshikoshi .special-menu-title { color: #daa520; }

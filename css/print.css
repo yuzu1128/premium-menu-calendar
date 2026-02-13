@@ -1,0 +1,180 @@
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 3mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+    overflow: visible !important;
+  }
+
+  /* エディタパネルを非表示 */
+  .editor-panel,
+  .controls-bar {
+    display: none !important;
+  }
+
+  .app-layout {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .preview-area {
+    padding: 0;
+    overflow: visible;
+    display: block;
+  }
+
+  .calendar-preview {
+    box-shadow: none;
+    padding: 8px !important;
+    width: 291mm;
+    height: auto;
+    max-height: none;
+    aspect-ratio: unset;
+    margin: 0;
+    overflow: visible !important;
+    border: none;
+    border-radius: 0;
+  }
+
+  .calendar-preview::before,
+  .calendar-preview::after {
+    opacity: 0.35;
+    width: 220px;
+    height: 220px;
+  }
+
+  .calendar-preview::before {
+    top: -10px;
+    right: -10px;
+  }
+
+  .calendar-preview::after {
+    bottom: -10px;
+    left: -40px;
+  }
+
+  /* ヘッダー圧縮 */
+  header {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+  }
+
+  .header-subtitle {
+    font-size: 0.7rem !important;
+    margin-top: 2px !important;
+  }
+
+  /* カレンダーグリッド */
+  .calendar {
+    border-top: 1px solid var(--border-color);
+    background: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .day-header {
+    padding: 4px;
+    font-size: 0.85rem;
+  }
+
+  .day-cell {
+    min-height: 0;
+    padding: 22px 5px 4px 8px;
+    box-shadow: none !important;
+  }
+
+  .day-cell:hover {
+    box-shadow: none !important;
+  }
+
+  .day-cell.selected {
+    box-shadow: none !important;
+  }
+
+  .day-number {
+    font-size: 0.95rem;
+    top: 4px;
+    left: 6px;
+  }
+
+  .note {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    top: 3px;
+    right: 3px;
+  }
+
+  .menu-items {
+    font-size: 0.7rem;
+  }
+
+  .menu-items li {
+    margin-bottom: 1px;
+    padding-left: 10px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .icon {
+    font-size: 0.65rem;
+  }
+
+  .special-menu-title {
+    font-size: 0.85rem;
+    margin-top: 15px;
+  }
+
+  .menu-img {
+    max-height: 50px;
+  }
+
+  .popup-message {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    margin-top: 5px;
+  }
+
+  /* 5週の月 */
+  .calendar.weeks-5 .day-cell {
+    padding-top: 20px;
+  }
+
+  .calendar.weeks-5 .menu-items {
+    font-size: 0.65rem;
+  }
+
+  /* 6週の月 */
+  .calendar.weeks-6 .day-cell {
+    padding-top: 16px;
+  }
+
+  .calendar.weeks-6 .menu-items {
+    font-size: 0.6rem;
+  }
+
+  .calendar.weeks-6 .day-number {
+    font-size: 0.8rem;
+  }
+
+  .calendar.weeks-6 .menu-items li {
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+}

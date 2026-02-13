@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --primary-color: #5d1010;
+  --secondary-color: #2c3e50;
+  --accent-color: #c0392b;
+  --bg-color: #fffaf0;
+  --border-color: #dcdde1;
+  --text-color: #2f3640;
+  --note-bg: #f8f9fa;
+  --weekend-sun: #e84118;
+  --weekend-sat: #0097e6;
+  --accent-image: none;
+  --accent-opacity-top: 0;
+  --accent-opacity-bottom: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #f0f2f5;
+  color: var(--text-color);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* アプリ全体レイアウト */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* カレンダープレビューエリア */
+.preview-area {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 68px;
+  overflow: auto;
+  background: #f0f2f5;
+}
+
+/* カレンダーコンテナ */
+.calendar-preview {
+  width: 1120px;
+  aspect-ratio: 1.414 / 1;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+/* 季節の装飾（コーナー） */
+.calendar-preview::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 250px;
+  height: 250px;
+  background-image: var(--accent-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: var(--accent-opacity-top);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.calendar-preview::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 200px;
+  height: 200px;
+  background-image: var(--accent-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: var(--accent-opacity-bottom);
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+/* ヘッダー */
+header {
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 3px double var(--accent-color);
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+}
+
+.header-subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  margin-top: 5px;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+/* ========== レスポンシブ（タブレット） ========== */
+@media screen and (max-width: 1024px) {
+  .calendar-preview {
+    width: 95vw;
+    max-width: 1120px;
+    aspect-ratio: unset;
+    height: auto;
+  }
+}
+
+/* ========== レスポンシブ（スマホ） ========== */
+@media screen and (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .preview-area {
+    padding: 10px;
+    padding-top: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .calendar-preview {
+    width: 1000px;
+    min-width: 1000px;
+    aspect-ratio: unset;
+    height: auto;
+    padding: 20px;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  h1 { font-size: 1.8rem; }
+  .header-subtitle { font-size: 0.8rem; }
+}

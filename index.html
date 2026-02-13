@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>献立カレンダー ジェネレーター</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/templates.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+</head>
+
+<body>
+  <div class="app-layout">
+    <!-- モバイル用トグル -->
+    <button class="mobile-editor-toggle" id="btn-toggle-editor" aria-label="編集パネル切替">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+    </button>
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- エディタパネル（左） -->
+    <div class="editor-panel" id="editor-panel">
+
+      <!-- 年月選択 -->
+      <div class="editor-section">
+        <h3>年月</h3>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="year-input">年</label>
+            <input type="number" id="year-input" min="2020" max="2100" value="2026">
+          </div>
+          <div class="field-group">
+            <label for="month-select">月</label>
+            <select id="month-select"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- テンプレート選択 -->
+      <div class="editor-section">
+        <h3>テンプレート</h3>
+        <div class="field-group">
+          <label for="theme-select">装飾スタイル</label>
+          <select id="theme-select"></select>
+        </div>
+      </div>
+
+      <!-- データ操作 -->
+      <div class="editor-section">
+        <h3>データ</h3>
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="btn-import">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            JSONインポート
+          </button>
+          <button class="btn btn-secondary" id="btn-export">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            JSONエクスポート
+          </button>
+        </div>
+        <div class="btn-group" style="margin-top: 8px;">
+          <button class="btn btn-danger" id="btn-clear-menus">献立クリア</button>
+          <button class="btn btn-danger" id="btn-clear-events">イベントクリア</button>
+        </div>
+        <input type="file" id="file-input" class="hidden-file-input" accept=".json">
+      </div>
+
+      <!-- 日別編集 -->
+      <div class="editor-section">
+        <h3>日別編集</h3>
+        <div class="day-editor">
+          <div class="day-editor-header">
+            <span class="day-editor-title"></span>
+            <button class="btn btn-danger" id="btn-clear-day" style="padding: 4px 10px; font-size: 0.75rem;">クリア</button>
+          </div>
+
+          <div class="field-group menu-input-group">
+            <label for="menu-1">メニュー 1</label>
+            <input type="text" id="menu-1" placeholder="例: 赤魚のみりん焼き">
+          </div>
+          <div class="field-group menu-input-group">
+            <label for="menu-2">メニュー 2</label>
+            <input type="text" id="menu-2" placeholder="例: 小松菜の胡麻和え">
+          </div>
+          <div class="field-group menu-input-group">
+            <label for="menu-3">メニュー 3</label>
+            <input type="text" id="menu-3" placeholder="例: 飛龍頭の煮物">
+          </div>
+          <div class="field-group menu-input-group">
+            <label for="menu-4">メニュー 4</label>
+            <input type="text" id="menu-4" placeholder="例: 豚バラと玉ねぎの醤油炒め">
+          </div>
+
+          <div class="field-group">
+            <label for="special-title">特別タイトル</label>
+            <input type="text" id="special-title" placeholder="例: いろいろおかずの日">
+          </div>
+
+          <div class="field-group">
+            <label for="day-image">画像パス</label>
+            <input type="text" id="day-image" placeholder="例: assets/food/omelet_rice.png">
+          </div>
+
+          <details class="event-fields">
+            <summary>イベント設定</summary>
+            <div class="field-group" style="margin-top: 8px;">
+              <label for="event-label">イベント名</label>
+              <input type="text" id="event-label" placeholder="例: 節分">
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="event-icon">アイコン</label>
+                <input type="text" id="event-icon" placeholder="👹">
+              </div>
+              <div class="field-group">
+                <label for="event-class">CSSクラス</label>
+                <input type="text" id="event-class" placeholder="setsubun">
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="event-popup">ポップアップ</label>
+              <input type="text" id="event-popup" placeholder="例: 恵方巻もあるよ！">
+            </div>
+          </details>
+        </div>
+
+        <div class="placeholder-text day-editor-placeholder">
+          カレンダーのセルをクリックして<br>献立を編集できます
+        </div>
+      </div>
+    </div>
+
+    <!-- コントロールバー（上部） -->
+    <div class="controls-bar">
+      <button class="btn btn-secondary" id="btn-print">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        印刷
+      </button>
+      <button class="btn btn-primary" id="btn-pdf">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        PDF出力
+      </button>
+    </div>
+
+    <!-- プレビューエリア（右） -->
+    <div class="preview-area">
+      <div class="calendar-preview"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

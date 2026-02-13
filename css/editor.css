@@ -1,0 +1,290 @@
+/* エディタパネル */
+.editor-panel {
+  width: 340px;
+  min-width: 340px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.editor-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.editor-section h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* 入力フィールド */
+.field-group {
+  margin-bottom: 10px;
+}
+
+.field-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: border-color 0.2s;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color, #5d1010);
+  box-shadow: 0 0 0 2px rgba(93, 16, 16, 0.1);
+}
+
+.field-row {
+  display: flex;
+  gap: 10px;
+}
+
+.field-row .field-group {
+  flex: 1;
+}
+
+/* ボタン */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.btn-primary {
+  background: var(--primary-color, #5d1010);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background: #eee;
+}
+
+.btn-danger {
+  background: #fff;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.btn-danger:hover {
+  background: #fdf0ef;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* 日別編集セクション */
+.day-editor {
+  display: none;
+}
+
+.day-editor.active {
+  display: block;
+}
+
+.day-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.day-editor-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color, #5d1010);
+}
+
+/* イベント編集 */
+.event-fields {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.event-fields summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* メニュー入力 */
+.menu-input-group {
+  position: relative;
+}
+
+.menu-input-group input {
+  padding-left: 24px;
+}
+
+.menu-input-group::before {
+  content: "\2022";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-color, #c0392b);
+  font-weight: bold;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* プレースホルダーテキスト */
+.placeholder-text {
+  color: #aaa;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 30px 20px;
+  line-height: 1.6;
+}
+
+/* 隠しファイル入力 */
+.hidden-file-input {
+  display: none;
+}
+
+/* コントロールバー（プレビューエリア上部） */
+.controls-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 340px;
+  height: 48px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  z-index: 100;
+  gap: 10px;
+}
+
+/* モバイル用トグルボタン（デスクトップでは非表示） */
+.mobile-editor-toggle {
+  display: none;
+}
+
+.mobile-overlay {
+  display: none;
+}
+
+/* ========== レスポンシブ（スマホ） ========== */
+@media screen and (max-width: 768px) {
+  /* モバイル用トグルボタン */
+  .mobile-editor-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary-color, #5d1010);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .mobile-editor-toggle:active {
+    transform: scale(0.9);
+  }
+
+  /* オーバーレイ */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 199;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  /* エディタパネル：スライドイン */
+  .editor-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .editor-panel.open {
+    transform: translateX(0);
+  }
+
+  /* コントロールバー */
+  .controls-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    justify-content: center;
+    padding: 0 10px;
+  }
+}
