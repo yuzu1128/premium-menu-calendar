@@ -8,6 +8,7 @@ import { applyTheme } from './theme-manager.js';
 import { initEditor, setData, selectDay, getSelectedDay, clearMenus, clearEvents } from './editor.js';
 import { exportJSON, importJSON, createEmptyData } from './data-io.js';
 import { printCalendar, exportPDF } from './pdf-export.js';
+import { parseTextBulk, importCSVFile, mergeDays } from './bulk-input.js';
 
 let currentData = null;
 let currentCalendar = null;
@@ -31,6 +32,16 @@ function init() {
   document.getElementById('btn-pdf').addEventListener('click', handlePDFExport);
   document.getElementById('btn-clear-menus').addEventListener('click', handleClearMenus);
   document.getElementById('btn-clear-events').addEventListener('click', handleClearEvents);
+
+  // 一括入力
+  document.getElementById('btn-bulk-text').addEventListener('click', openBulkModal);
+  document.getElementById('btn-bulk-csv').addEventListener('click', handleCSVImport);
+  document.getElementById('btn-copy-prev').addEventListener('click', handleCopyPrevMonth);
+  document.getElementById('bulk-modal-close').addEventListener('click', closeBulkModal);
+  document.getElementById('bulk-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'bulk-modal') closeBulkModal();
+  });
+  document.getElementById('btn-bulk-apply').addEventListener('click', applyBulkText);
 
   // モバイルトグル
   setupMobileToggle();
@@ -141,6 +152,85 @@ function handleClearEvents() {
   if (confirm('この月のカスタムイベントを全てクリアしますか？\n（献立データは残ります）')) {
     clearEvents();
   }
+}
+
+// ── 一括入力 ──
+
+function openBulkModal() {
+  document.getElementById('bulk-modal').classList.add('active');
+  document.getElementById('bulk-textarea').focus();
+}
+
+function closeBulkModal() {
+  document.getElementById('bulk-modal').classList.remove('active');
+}
+
+function applyBulkText() {
+  const text = document.getElementById('bulk-textarea').value.trim();
+  if (!text) { alert('テキストを入力してください'); return; }
+
+  const newDays = parseTextBulk(text);
+  const count = Object.keys(newDays).length;
+  if (count === 0) {
+    alert('献立データを読み取れませんでした。\n形式: 1: メニュー1, メニュー2, ...');
+    return;
+  }
+
+  const overwrite = document.getElementById('bulk-overwrite').checked;
+  if (overwrite) {
+    currentData.days = { ...currentData.days, ...newDays };
+  } else {
+    currentData.days = mergeDays(currentData.days || {}, newDays);
+  }
+
+  closeBulkModal();
+  document.getElementById('bulk-textarea').value = '';
+  renderCalendar();
+  alert(`${count}日分の献立を反映しました`);
+}
+
+function handleCSVImport() {
+  const input = document.getElementById('csv-input');
+  input.click();
+  input.onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      const newDays = await importCSVFile(file);
+      const count = Object.keys(newDays).length;
+      currentData.days = { ...(currentData.days || {}), ...newDays };
+      renderCalendar();
+      alert(`${count}日分の献立をCSVから読み込みました`);
+    } catch (err) {
+      alert(err.message);
+    }
+    input.value = '';
+  };
+}
+
+function handleCopyPrevMonth() {
+  const input = document.getElementById('prev-month-input');
+  input.click();
+  input.onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      const data = await importJSON(file);
+      if (!data.days || Object.keys(data.days).length === 0) {
+        alert('読み込んだJSONに献立データがありません');
+        return;
+      }
+      const count = Object.keys(data.days).length;
+      currentData.days = { ...(currentData.days || {}), ...data.days };
+      renderCalendar();
+      alert(`${count}日分の献立を前月データからコピーしました\n（年月・テンプレートは現在のままです）`);
+    } catch (err) {
+      alert(err.message);
+    }
+    input.value = '';
+  };
 }
 
 // DOM ready

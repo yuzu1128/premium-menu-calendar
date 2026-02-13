@@ -48,6 +48,18 @@
         </div>
       </div>
 
+      <!-- 一括入力 -->
+      <div class="editor-section">
+        <h3>一括入力</h3>
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="btn-bulk-text">テキスト一括</button>
+          <button class="btn btn-secondary" id="btn-bulk-csv">CSV読込</button>
+          <button class="btn btn-secondary" id="btn-copy-prev">前月コピー</button>
+        </div>
+        <input type="file" id="csv-input" class="hidden-file-input" accept=".csv,.tsv,.txt">
+        <input type="file" id="prev-month-input" class="hidden-file-input" accept=".json">
+      </div>
+
       <!-- データ操作 -->
       <div class="editor-section">
         <h3>データ</h3>
@@ -152,6 +164,29 @@
     <!-- プレビューエリア（右） -->
     <div class="preview-area">
       <div class="calendar-preview"></div>
+    </div>
+  </div>
+
+  <!-- テキスト一括入力モーダル -->
+  <div class="modal-overlay" id="bulk-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>テキスト一括入力</h3>
+        <button class="modal-close" id="bulk-modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-hint">1行1日の形式で入力してください。メニューはカンマ区切りです。</p>
+        <pre class="modal-example">1: 赤魚のみりん焼き, 小松菜の胡麻和え, 豚汁
+2: 肉じゃが, ほうれん草のお浸し
+3: ハンバーグ, サラダ, コーンスープ, ごはん</pre>
+        <textarea id="bulk-textarea" rows="12" placeholder="1: メニュー1, メニュー2, メニュー3&#10;2: メニュー1, メニュー2&#10;..."></textarea>
+        <div class="modal-actions">
+          <label class="modal-option">
+            <input type="checkbox" id="bulk-overwrite" checked> 既存の献立を上書き
+          </label>
+          <button class="btn btn-primary" id="btn-bulk-apply">反映する</button>
+        </div>
+      </div>
     </div>
   </div>
 
