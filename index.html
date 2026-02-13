@@ -56,8 +56,8 @@
           <button class="btn btn-secondary" id="btn-bulk-csv">CSV読込</button>
           <button class="btn btn-secondary" id="btn-copy-prev">前月コピー</button>
         </div>
-        <input type="file" id="csv-input" class="hidden-file-input" accept=".csv,.tsv,.txt">
-        <input type="file" id="prev-month-input" class="hidden-file-input" accept=".json">
+        <input type="file" id="csv-input" class="hidden-file-input" accept=".csv,.tsv,.txt" aria-label="CSV読込">
+        <input type="file" id="prev-month-input" class="hidden-file-input" accept=".json" aria-label="前月データ読込">
       </div>
 
       <!-- データ操作 -->
@@ -73,11 +73,11 @@
             JSONエクスポート
           </button>
         </div>
-        <div class="btn-group" style="margin-top: 8px;">
+        <div class="btn-group btn-group-mt">
           <button class="btn btn-danger" id="btn-clear-menus">献立クリア</button>
           <button class="btn btn-danger" id="btn-clear-events">イベントクリア</button>
         </div>
-        <input type="file" id="file-input" class="hidden-file-input" accept=".json">
+        <input type="file" id="file-input" class="hidden-file-input" accept=".json" aria-label="JSONインポート">
       </div>
 
       <!-- 日別編集 -->
@@ -86,7 +86,7 @@
         <div class="day-editor">
           <div class="day-editor-header">
             <span class="day-editor-title"></span>
-            <button class="btn btn-danger" id="btn-clear-day" style="padding: 4px 10px; font-size: 0.75rem;">クリア</button>
+            <button class="btn btn-danger btn-sm" id="btn-clear-day">クリア</button>
           </div>
 
           <div class="field-group menu-input-group">
@@ -118,7 +118,7 @@
 
           <details class="event-fields">
             <summary>イベント設定</summary>
-            <div class="field-group" style="margin-top: 8px;">
+            <div class="field-group event-label-field">
               <label for="event-label">イベント名</label>
               <input type="text" id="event-label" placeholder="例: 節分">
             </div>
