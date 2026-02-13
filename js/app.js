@@ -10,17 +10,38 @@ import { exportJSON, importJSON, createEmptyData } from './data-io.js';
 import { printCalendar, exportPDF } from './pdf-export.js';
 import { parseTextBulk, importCSVFile, mergeDays } from './bulk-input.js';
 
+const STORAGE_KEY = 'premium-menu-calendar';
 let currentData = null;
 let currentCalendar = null;
 
-function init() {
-  // 初期データ（今月）
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1;
-  const themeId = getDefaultThemeId(month);
+function loadFromStorage() {
+  try {
+    const json = localStorage.getItem(STORAGE_KEY);
+    if (!json) return null;
+    const data = JSON.parse(json);
+    if (data && data.year && data.month) return data;
+  } catch { /* ignore */ }
+  return null;
+}
 
-  currentData = createEmptyData(year, month, themeId);
+function saveToStorage() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentData));
+  } catch { /* ignore */ }
+}
+
+function init() {
+  // localStorageから復元、なければ今月で初期化
+  const saved = loadFromStorage();
+  if (saved) {
+    currentData = saved;
+  } else {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const themeId = getDefaultThemeId(month);
+    currentData = createEmptyData(year, month, themeId);
+  }
 
   // エディタ初期化
   initEditor(currentData, handleDataChange);
@@ -102,6 +123,7 @@ function renderCalendar() {
 
 function handleDataChange(changeType) {
   renderCalendar();
+  saveToStorage();
 }
 
 function handleDayClick(day, element) {
@@ -124,6 +146,7 @@ function handleImport() {
       currentData = data;
       setData(currentData);
       renderCalendar();
+      saveToStorage();
     } catch (err) {
       alert(err.message);
     }
@@ -186,6 +209,7 @@ function applyBulkText() {
   closeBulkModal();
   document.getElementById('bulk-textarea').value = '';
   renderCalendar();
+  saveToStorage();
   alert(`${count}日分の献立を反映しました`);
 }
 
@@ -201,6 +225,7 @@ function handleCSVImport() {
       const count = Object.keys(newDays).length;
       currentData.days = { ...(currentData.days || {}), ...newDays };
       renderCalendar();
+      saveToStorage();
       alert(`${count}日分の献立をCSVから読み込みました`);
     } catch (err) {
       alert(err.message);
@@ -225,6 +250,7 @@ function handleCopyPrevMonth() {
       const count = Object.keys(data.days).length;
       currentData.days = { ...(currentData.days || {}), ...data.days };
       renderCalendar();
+      saveToStorage();
       alert(`${count}日分の献立を前月データからコピーしました\n（年月・テンプレートは現在のままです）`);
     } catch (err) {
       alert(err.message);
